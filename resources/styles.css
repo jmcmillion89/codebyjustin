@@ -1,0 +1,26 @@
+html,body {
+  height: 100%;
+}
+
+* {
+    -moz-box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(83, 73, 52);
+  color: #424242;
+  margin: 0;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:14px;
+  line-height:1.428571429;
+}
+
+h1 {
+  color: orange;
+}
+
+#logo {
+  scale: 50%;
+  margin: auto;
+  display: block;
+}
