@@ -9,15 +9,17 @@ canvas.height = window.innerHeight;
 const stars = [];
 let connectDistance = 100;
 let lightnessFactor = 0.5;
-let intensityFactor = 1; // Added variable for intensity
+let intensityFactor = 1;
+let minStars = 500;
+let maxStars = 1500;
 
 function adjustParametersForScreenSize() {
   if (window.innerWidth < 1000) {
     // Adjust parameters for smaller screens
     connectDistance = 50 * intensityFactor;
     lightnessFactor = 0.1 * intensityFactor;
-    minStars = 10;
-    maxStars = 50;
+    minStars = 200;
+    maxStars = 700;
   } else {
     // Default parameters for larger screens
     connectDistance = 100 * intensityFactor;
@@ -34,7 +36,7 @@ function createStar() {
   const color = getRandomLightBlueColor();
   const angle = Math.random() * Math.PI * 2;
   const speed = Math.random() * 0.102;
-  const phase = Math.random() * Math.PI * 4; // Add phase for glow variation
+  const phase = Math.random() * Math.PI * 4;
 
   stars.push({ x, y, radius, color, angle, speed, phase });
 }
@@ -56,7 +58,7 @@ function getRandomLightBlueColor() {
 function createGalaxy() {
   adjustParametersForScreenSize();
 
-  const numberOfStars = 1000; // Change this value to control the number of stars
+  const numberOfStars = Math.floor(Math.random() * (maxStars - minStars + 1) + minStars);
 
   for (let i = 0; i < numberOfStars; i++) {
     createStar();
