@@ -16,7 +16,7 @@ let maxStars = 1500;
 function adjustParametersForScreenSize() {
   if (window.innerWidth < 1000) {
     // Adjust parameters for smaller screens
-    connectDistance = 50 * intensityFactor;
+    connectDistance = 100 * intensityFactor;
     lightnessFactor = 0.1 * intensityFactor;
     minStars = 200;
     maxStars = 700;
